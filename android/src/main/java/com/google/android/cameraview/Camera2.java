@@ -591,6 +591,7 @@ class Camera2 extends CameraViewImpl implements MediaRecorder.OnInfoListener, Me
                 mPreviewRequestBuilder = mCamera.createCaptureRequest(CameraDevice.TEMPLATE_RECORD);
                 mPreviewRequestBuilder.addTarget(surface);
                 mPreviewRequestBuilder.addTarget(mMediaRecorderSurface);
+                mPreviewRequestBuilder.set(CaptureRequest.LENS_OPTICAL_STABILIZATION_MODE,CaptureRequest.LENS_OPTICAL_STABILIZATION_MODE_ON);
                 mCamera.createCaptureSession(Arrays.asList(surface, mMediaRecorderSurface),
                     mSessionCallback, null);
                 mMediaRecorder.start();
